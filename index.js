@@ -13,7 +13,11 @@ const __dirname = dirname(fileURLToPath(import.meta.url));
 
 const app = express();
 const PORT = process.env.PORT || 5000;
-const corsOptions = {Credential:true, origin: process.env.URL || '*'};
+// const corsOptions = {Credential:true, origin: process.env.URL || '*'};
+const corsOptions = {
+  credentials: true,
+  origin: "http://localhost:3000"
+};
 
 app.use(cors(corsOptions));
 app.use(json());

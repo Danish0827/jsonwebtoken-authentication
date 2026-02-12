@@ -11,6 +11,6 @@ CREATE TABLE users(
 
 SELECT * FROM users;
 
-INSERT INTO users (user_name,user_email,user_password) VALUES ('Bob','bob@email.com','bob');
+INSERT INTO users (user_name,user_email,user_password) VALUES ('Danish','s.danish0827@email.com','danish');
 
 
