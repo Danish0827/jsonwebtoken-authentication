@@ -6,6 +6,9 @@ import {dirname,join} from 'path';
 import { fileURLToPath } from "url";
 import userRoutes from './routes/user-routes.js'
 import authRoutes from './routes/auth-routes.js'
+import categoryRoutes from "./routes/blogcategory-routes.js";
+import blogRoutes from "./routes/blog-routes.js";
+import imagesRoutes from "./routes/image-routes.js"
 
 dotenv.config();
 
@@ -22,10 +25,12 @@ const corsOptions = {
 app.use(cors(corsOptions));
 app.use(json());
 app.use(cookieParser());
-
+// app.use(authenticateToken)
 app.use('/', express.static(join(__dirname,'public')));
 app.use('/api/users', userRoutes);
 app.use('/api/auth', authRoutes);
-
+app.use('/api/blogcategories', categoryRoutes);
+app.use("/api/blogs", blogRoutes);
+app.use("/api/images", imagesRoutes);
 
 app.listen(PORT, ()=>console.log(`server is listening on ${PORT}`))

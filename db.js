@@ -15,5 +15,7 @@ const poolConfig = process.env.DATABASE_URL ? {
 } : localPoolConfig;
 
 const pool = new Pool(poolConfig);
+// console.log(pool);
+
 export default pool;
 
